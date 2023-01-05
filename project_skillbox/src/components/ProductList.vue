@@ -1,6 +1,7 @@
 <template>
   <ul class="catalog__list">
     <li class="catalog__item" v-for="(product, index) in products" :key="index">
+
       <a class="catalog__pic" href="#">
         <img :src="product.image"  :alt="product.title">
       </a>
@@ -16,15 +17,14 @@
       </span>
       </li>
       </ul>
-      <ProductItem :products="product"></ProductItem>
+      <ProductItem v-for="(product, index) in products" :product="product" :key="index" />
 </template>
 
 <script>
 import ProductItem from './ProductItem.vue';
 
 export default {
-  props: ['products'],
-  // eslint-disable-next-line vue/no-unused-components
+  props: ['products', 'product'],
   components: { ProductItem },
 };
 </script>

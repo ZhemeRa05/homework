@@ -1,13 +1,13 @@
 <template>
-  <ProductList :products="products"></ProductList>
+  <ProductList :product="product"></ProductList>
 </template>
 
 <script>
-
 import ProductList from './ProductList.vue';
 
 export default {
-  props: ['products'],
+
+  props: ['product'],
   components: { ProductList },
 };
 </script>
